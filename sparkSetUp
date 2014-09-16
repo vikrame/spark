@@ -1,0 +1,20 @@
+Following are the steps to be followed to setup Spark and Scala Locally
+
+Step:1 
+Download spark from http://spark.apache.org/downloads.html 
+
+Step:2
+Download http://www.scala-lang.org/download
+
+Step:3
+Extract scala and Add scala home directory to PATH variable
+export SCALA_HOME=/Users/ondrej/scala-2.10.4 
+export PATH=$PATH:$SCALA_HOME/bin
+
+Step:4
+Extract spark and navigate to spark home directoy, run following command
+sbt/sbt clean assembly
+
+Step:5
+Navigate to spark home directory and start spark shell
+./bin/spark-shell
