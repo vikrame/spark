@@ -18,3 +18,17 @@ res9: Long = 4
 myAction.countByValue()
 //res10: scala.collection.Map[Int,Long] = Map(1 -> 1, 2 -> 1, 3 -> 2)
 
+//Take - Return num elements from the RDD
+myAction.take(3)
+//res12: Array[Int] = Array(1, 2, 3)
+
+myAction.top(2)
+//res13: Array[Int] = Array(3, 3)
+
+//Take Ordered - Return num elements based on providing ordering
+myAction.takeOrdered(2)
+res14: Array[Int] = Array(1, 2)
+
+
+
+
