@@ -25,3 +25,17 @@ val myFilter = myList.filter(x=> x!=4)
 
 myFilter.collect()
 //res3: Array[Int] = Array(1, 2, 3)
+
+//Distinct
+val myDistinct = myList.distinct()
+//myDistinct: org.apache.spark.rdd.RDD[Int] = MappedRDD[3] at distinct at <console>:14
+
+myDistinct.collect()
+//res0: Array[Int] = Array(1, 2, 3, 4)
+
+//sample(withReplacement, fraction, [seed])
+val mySample =  myList.sample(false, 0.5)
+//mySample: org.apache.spark.rdd.RDD[Int] = PartitionwiseSampledRDD[5] at sample at <console>:14
+
+mySample.collect()
+//res3: Array[Int] = Array(2, 3)
