@@ -44,4 +44,31 @@ val myIJoin = myEmpPair.join(myDepPair)
 //(1002,(300 Emily Thorne 10000 2015-01-22 1002,1002 Hacker)), (1002,(700 Nolan Ross 10000 2015-01-22 1002,1002 Hacker)), 
 //(1000,(100 Vikram Elango 10000 2015-01-22 1000,1000 Computer)), (1000,(500 Daniel Grayson 10000 2015-01-22 1000,1000 Computer)))
 
+val myLJoin = myEmpPair.leftOuterJoin(myDepPair)
+//res11: Array[(String, (String, Option[String]))] = 
+//Array((1001,(200 Amanada clarke 10000 2015-01-22 1001,Some(1001 Geek))), (1001,(600 Conrad Grayson 10000 2015-01-22 1001,Some(1001 Geek))), 
+//(1003,(400 David Clarke 10000 2015-01-22 1003,Some(1003 Bartender))), (1003,(800 Jack Porter 10000 2015-01-22 1003,Some(1003 Bartender))), 
+//(1002,(300 Emily Thorne 10000 2015-01-22 1002,Some(1002 Hacker))), (1002,(700 Nolan Ross 10000 2015-01-22 1002,Some(1002 Hacker))), 
+//(1000,(100 Vikram Elango 10000 2015-01-22 1000,Some(1000 Computer))), (1000,(500 Daniel Grayson 10000 2015-01-22 1000,Some(1000 Computer))), 
+//(1004,(900 Charlotte Clarke 10000 2015-01-22 1004,None)))
+
+val myRJoin = myEmpPair.rightOuterJoin(myDepPair)
+//res12: Array[(String, (Option[String], String))] = 
+//Array((1005,(None,1005 Student)), 
+//(1001,(Some(200 Amanada clarke 10000 2015-01-22 1001),1001 Geek)), (1001,(Some(600 Conrad Grayson 10000 2015-01-22 1001),1001 Geek)), 
+//(1003,(Some(400 David Clarke 10000 2015-01-22 1003),1003 Bartender)), (1003,(Some(800 Jack Porter 10000 2015-01-22 1003),1003 Bartender)), 
+//(1002,(Some(300 Emily Thorne 10000 2015-01-22 1002),1002 Hacker)), (1002,(Some(700 Nolan Ross 10000 2015-01-22 1002),1002 Hacker)), 
+//(1000,(Some(100 Vikram Elango 10000 2015-01-22 1000),1000 Computer)), (1000,(Some(500 Daniel Grayson 10000 2015-01-22 1000),1000 Computer)))
+
+val myFilter = myEmpPair.filter{case(key,value)=>key>"1000"}
+//res16: Array[(String, String)] = 
+//Array((1001,200 Amanada clarke 10000 2015-01-22 1001), (1002,300 Emily Thorne 10000 2015-01-22 1002), 
+//(1003,400 David Clarke 10000 2015-01-22 1003), (1001,600 Conrad Grayson 10000 2015-01-22 1001),
+//(1002,700 Nolan Ross 10000 2015-01-22 1002), (1003,800 Jack Porter 10000 2015-01-22 1003), 
+//(1004,900 Charlotte Clarke 10000 2015-01-22 1004))
+
+val myFilter = myEmpPair.filter{case(key,value)=>key>"1000"}.count()
+//myFilter: Long = 7
+
+
 
